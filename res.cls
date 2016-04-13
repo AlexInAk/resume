@@ -226,7 +226,8 @@
     }{
       % two addresses
       \leavevmode\hbox to \textwidth{\@tablebox{\@addressone}\hfil
-				     \@tablebox{\@addresstwo}}\par
+				     \@tablebox{\@addresstwo}\hfil
+                     \@tablebox{\@weburl}}\par
     }%
   }%
 \endgroup}
@@ -249,6 +250,7 @@
     \leavevmode\hbox to \textwidth
       {\hfill\vbox{\hbox{\@addressone}
 		   \hbox{\@addresstwo}
+		   \hbox{\@weburl}
 		  }%
       }\par
   }
@@ -497,7 +499,10 @@
 \let\@addresstwo\relax
 
 \def\address#1{
-  \@ifundefined{@addressone}{\def\@addressone{#1}}{\def\@addresstwo{#1}}}
+\@ifundefined{@addressone}{\def\@addressone{#1}}{\def\@addresstwo{#1}}}
+\def\webaddress#1{
+    \@ifundefined{@weburl}{\def\@weburl{#1}}
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % if you want to print your name and address is a slightly
